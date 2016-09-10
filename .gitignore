@@ -1,0 +1,38 @@
+//variables
+float mouseX = width*0.5;
+float mouseY = width*0.5;
+
+void setup()
+{ 
+fullScreen();
+}
+
+void draw()
+{
+//drawing background
+background(0);
+
+/drawing text
+textSize(32);
+fill(0,255,0);
+text("Click on circle to begin, and use your mouse to drag wherever you want.",width*0.12,width*0.07);
+
+//drawing circle with randomized colors
+ fill(random(255),random(255),random(255));
+ ellipse(mouseX,mouseY,width*0.07,height*0.12);
+}
+
+void mouseDragged()
+{
+  //moving circle with mouse
+  if(mousePressed);
+  mouseX = mouseX+6;
+  mouseY = mouseY+5;
+}
+
+//make art with collisions
+//have one line move around wherever you want
+//mouseDragged to move circle (collision)
+//make lines
+//always make lines touch each other and go in a random direction
+//use key pressed to change color 
