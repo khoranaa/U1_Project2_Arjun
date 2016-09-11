@@ -29,12 +29,12 @@ void draw()
  
  float targetY = mouseY;
  float dy = targetY - y;
- y += dy * easing;
- 
+ y += dy * easing; 
  ellipse(mouseX,mouseY,x1,y1);
+}
  
  //changing size and colors of circle
- if(keyPressed == true)
+ void keyPressed()
  {
    if(key == 'w')
    {
@@ -98,7 +98,6 @@ void draw()
      fill(102,0,0);
      ellipse(mouseX,mouseY,x1,y1);
    }
- }
 }
 
 //make art with collisions
