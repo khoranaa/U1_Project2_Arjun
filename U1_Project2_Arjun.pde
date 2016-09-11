@@ -1,9 +1,10 @@
 //variables
-//float mouseX = width*0.5;
-//float mouseY = height*0.5;
 float x;
 float y;
 float easing = 0.05;
+float x1 = 100;
+float y1 = 100;
+
 
 void setup()
 {
@@ -19,8 +20,8 @@ void draw()
  fill(0,255,0);
  text("Click on circle to begin, and use your mouse to drag wherever you want.",width*0.12,width*0.07);
  
- //drawing circle with randomized colors
- fill(random(255),random(255),random(255));
+ //drawing circle with original color
+ fill(255);
  
  float targetX = mouseX;
  float dx = targetX - x;
@@ -30,16 +31,75 @@ void draw()
  float dy = targetY - y;
  y += dy * easing;
  
- ellipse(mouseX,mouseY,100,100);
+ ellipse(mouseX,mouseY,x1,y1);
+ 
+ //changing size and colors of circle
+ if(keyPressed == true)
+ {
+   if(key == 'w')
+   {
+     x1 = x1+10; 
+     y1 = y1+10;
+     ellipse(mouseX,mouseY,x1,y1);
+   }
+   else if(key == 's')
+   {
+     x1 = x1-10;
+     y1 = y1-10;
+     ellipse(mouseX,mouseY,x1,y1);
+   } 
+   else if(key == '1') //get the color to change without holding the key down
+   {
+     fill(0,255,0);
+     ellipse(mouseX,mouseY,x1,y1);
+   }
+   else if(key == '2')
+   {
+     fill(0,0,255);
+     ellipse(mouseX,mouseY,x1,y1);
+   }
+   else if(key == '3')
+   {
+     fill(255,255,0);
+     ellipse(mouseX,mouseY,x1,y1);
+   }
+   else if(key == '4')
+   {
+     fill(63,36,117);
+     ellipse(mouseX,mouseY,x1,y1);
+   }
+   else if(key == '5')
+   {
+     fill(204,51,204);
+     ellipse(mouseX,mouseY,x1,y1);
+   }
+   else if(key == '6')
+   {
+     fill(random(256));
+     ellipse(mouseX,mouseY,x1,y1);
+   }
+   else if(key == '7')
+   {
+     fill(255,102,0);
+     ellipse(mouseX,mouseY,x1,y1);
+   }
+   else if(key == '8')
+   {
+     fill(random(255), random(255), random(255));
+     ellipse(mouseX,mouseY,x1,y1);
+   }
+   else if(key == '9')
+   {
+     fill(202,255,255);
+     ellipse(mouseX,mouseY,x1,y1);
+   }
+   else if(key == '0')
+   {
+     fill(102,0,0);
+     ellipse(mouseX,mouseY,x1,y1);
+   }
+ }
 }
-
-/*void mouseDragged()
-{
-  //moving circle with mouse
-  if(mousePressed);
-  ellipse(mouseX,mouseY,100,100);
-  mouseX = mouseX + 5;
-}*/
 
 //make art with collisions
 //have one line move around wherever you want
