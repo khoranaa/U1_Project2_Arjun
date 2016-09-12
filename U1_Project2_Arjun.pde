@@ -140,6 +140,11 @@ void draw()
      fill(r1,g1,b1);
      ellipse(mouseX,mouseY,x1,y1);
    }
+   else if(key == BACKSPACE)
+   {
+    background(0);
+    ellipse(mouseX,mouseY, x1, y1);
+   }
  }
 }
 
